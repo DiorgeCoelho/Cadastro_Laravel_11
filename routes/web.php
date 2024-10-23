@@ -7,15 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('modal', function(){
-    return view('modal');
-});
-
-// Route::get('edit', function(){
-//     return view('produto.produtoEdit');
-// });
-
-
 Route::get('produto', [ProdutoController::class, 'index'])->name('prod');
 Route::get('produtoP', [ProdutoController::class, 'filtro'])->name('produto');
 Route::get('produtoEdit/{id}', [ProdutoController::class, 'edit']);

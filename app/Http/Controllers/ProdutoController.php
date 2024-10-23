@@ -12,39 +12,12 @@ class ProdutoController extends Controller
 public function index(){
 
     $produtos  = Produto::all();
-    //$produtos = Produto::paginate(5);
 
-
-    //response($produtos);
     return view('produto.produtos', ['produtos' => $produtos]);
 
 }
 
-public function filtro(Request $request){
-    $query = Produto::query();
 
-        // Filtros
-        // if ($request->has('descricao')) {
-        //     $query->where('descricao', $request->input('categoria'));
-        // }
-
-        // if ($request->has('preco_min')) {
-        //     $query->where('preco', '>=', $request->input('preco_min'));
-        // }
-
-        // if ($request->has('preco_max')) {
-        //     $query->where('preco', '<=', $request->input('preco_max'));
-        // }
-
-        if ($request->has('descricao')) {
-            $query->where('descricao', 'LIKE', '%' . $request->input('nome') . '%');
-        }
-
-        // Obter resultados filtrados
-        $produtos = $query->get();
-
-        return view('produto.produto', compact('produtos'));
-}
 
 public function cadastro(Request $request ){
 
@@ -56,8 +29,6 @@ public function cadastro(Request $request ){
         ]);
 
         if ($produto->save()) {
-
-           // Produto::commit();
 
             $notification = [
                 'title' => 'Sucesso',
@@ -72,13 +43,9 @@ public function cadastro(Request $request ){
 
 public function edit($id): JsonResponse
 {
-
-
    $prod = Produto::find($id);
 
     return response()->json($prod);
-
-
 
 }
 
