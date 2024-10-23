@@ -2,21 +2,35 @@
 
 ## Descrição
 
-O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modais Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modais.
+O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
 
 ## Imagem do Projeto 📸
 
-**Home Produtos**
-![Home Produtos](public/images/HomeProduto.png)
+ ## Home Produtos
+<p align="center">
+  <img src="public/imagens/HomeProduto.png" text-align = "center" alt="Texto alternativo" width="800" />
+</p>
 
-**Cadastrar Produto**
-![Cadastrar Produto](public/images/CadastoModal.png)
 
-**Editar Produto**
-![Editar Produto](public/images/EditarModal.png)
+<br>
 
-**Visualizar Produto**
-![Visualizar Produto](public/images/VisualizarProduto.png)
+ ## Cadastrar Produto
+<p align="center">
+<img src="public/imagens/CadastoModal.png" text-align= "center" alt="Texto alternativo" width="700" />
+
+<br>
+
+##  Editar Produto
+<p align="center">
+<img src="public/imagens/EditarModal.png" text-align= " center"  alt="Texto alternativo" width="700" />
+</p>
+<br>
+
+## Visualizar Produto
+<p align="center">
+<img src="public/imagens/VisualizarProduto.png" text-align= " center" alt="Texto alternativo" width="700" />
+</p>
+<br>
 
 ## Pré-requisitos
 
@@ -62,7 +76,7 @@ Siga os passos abaixo para configurar o projeto em sua máquina local:
      DB_HOST=127.0.0.1
      DB_PORT=5432
      DB_DATABASE=SistemaCadastro (o nome e de sua escolha, mais tanto aqui como no banco tem que ser o mesmo)
-     DB_USERNAME=postgres (Por padrão o banco de dados cria esse usuários )
+     DB_USERNAME=postgres (Por padrão o banco de dados cria esse usuário )
      DB_PASSWORD= (a senha vc cria na hora da instalação)
      ```
 
