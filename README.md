@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O **Sistema de Cadastro** é um Sistema online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
+O **SCP** é um Sistema online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
 
 ## Imagem do Projeto 📸
 
@@ -37,7 +37,7 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados 
 
 - **Composer** (para gerenciar dependências do PHP) - [Download Composer](https://getcomposer.org/download/)  Não há necessidade de nenhuma alteração na configuração padrão 
 
-- **PostgreSQL** - [Download PostgreSQL](https://www.postgresql.org/) 
+- **PostgreSQL** - [Download PostgreSQL](https://www.postgresql.org/) Não há necessidade de nenhuma alteração na configuração padrão  
 
 - **Laravel Herd** (para ambiente local. Vem com o php instalado e o servidor web NGINX) - [Laravel Herd](https://herd.laravel.com/windows) Não há necessidade de nenhuma alteração na configuração padrão 
 
