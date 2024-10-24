@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O **SCP** é um Sistema online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
+O **SCP** é um Sistema online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações de volta.
 
 ## Imagem do Projeto 📸
 
