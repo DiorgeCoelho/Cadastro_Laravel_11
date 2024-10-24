@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
+O **Sistema de Cadastro** é um Sistema online desenvolvido em Laravel 11. Com uma interface intuitiva, utilizando modal Bootstrap para Cadastrar, Editar, e visualizar produtos. No desenvolvimeto foi utilizado codigo Simplificado para um maior entedimento. O sistema utiliza requisições AJAX para enviar as informações para as modal e utiliza as rotas para enviar as informações.
 
 ## Imagem do Projeto 📸
 
@@ -10,16 +10,11 @@ O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolv
 <p align="center">
   <img src="/public/imagens/HomeProduto.PNG" alt="Texto alternativo" width="800" />
 </p>
-
-
 <br>
 
  ## Cadastrar Produto
 <p align="center">
 <img src="/public/imagens/CadastoModal.PNG" alt="Texto alternativo" width="700" />
-Cadastro_Laravel_11
-
-
 <br>
 
 ##  Editar Produto
