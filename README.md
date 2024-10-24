@@ -8,7 +8,9 @@ O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolv
 
  ## Home Produtos
 <p align="center">
-  <img src="Cadastro_Laravel_11/cadastro/public/imagens/HomeProduto.png" alt="Texto alternativo" width="800" />
+  <!-- <img src="Cadastro_Laravel_11/public/imagens/HomeProduto.png" alt="Texto alternativo" width="800" /> -->
+
+  ![Notas](public/imagens/HomeProduto.png)
 </p>
 
 
@@ -55,8 +57,8 @@ Siga os passos abaixo para configurar o projeto em sua máquina local:
 
    - Abra o terminal e execute:
      ```bash
-     https://github.com/DiorgeCoelho/SistemaDeCadastro.git
-     cd notes
+     https://github.com/DiorgeCoelho/Cadastro_Laravel_11.git
+     cd Cadastro_Laravel_11
      ```
 
 2. **Instale as dependências com Composer**
