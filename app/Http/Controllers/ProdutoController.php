@@ -19,7 +19,8 @@ public function index(){
 
 
 
-public function cadastro(Request $request ){
+public function cadastro(Request $request )
+{
 
         $produto = new Produto();
         $produto = Produto::create([
@@ -28,16 +29,7 @@ public function cadastro(Request $request ){
 
         ]);
 
-        if ($produto->save()) {
-
-            $notification = [
-                'title' => 'Sucesso',
-                'messageSystem' => 'Produto cadastrado com sucesso!',
-                'type' => 'bg-success',
-            ];
-            return back()->with($notification);
-        }
-
+        $produto->save()->response()->json(['success'=>'Produto excluído com sucesso.']);
 
 }
 
@@ -49,8 +41,8 @@ public function edit($id): JsonResponse
 
 }
 
-public function update(Request $request){
-
+public function update(Request $request)
+{
 
     $id = $request->input('idProduto');
     $produto = Produto::find($id);

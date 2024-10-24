@@ -8,7 +8,6 @@ Route::get('/', function () {
 });
 
 Route::get('produto', [ProdutoController::class, 'index'])->name('prod');
-Route::get('produtoP', [ProdutoController::class, 'filtro'])->name('produto');
 Route::get('produtoEdit/{id}', [ProdutoController::class, 'edit']);
 Route::get('produtoShow/{id}', [ProdutoController::class, 'show']);
 Route::delete('produtoDelete/{id}', [ProdutoController::class, 'deleteProduto']);
