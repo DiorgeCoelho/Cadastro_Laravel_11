@@ -8,7 +8,7 @@ O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolv
 
  ## Home Produtos
 <p align="center">
-  <img src="../cadastro/public/imagens/HomeProduto.png" alt="Texto alternativo" width="800" />
+  <img src="Cadastro_Laravel_11/cadastro/public/imagens/HomeProduto.png" alt="Texto alternativo" width="800" />
 </p>
 
 
@@ -16,19 +16,21 @@ O **Sistema de Cadastro** é um Sistema de cadastro de produtos online desenvolv
 
  ## Cadastrar Produto
 <p align="center">
-<img src="../cadastro/public/imagens/CadastoModal.png" alt="Texto alternativo" width="700" />
+<img src="Cadastro_Laravel_11/public/imagens/CadastoModal.png" alt="Texto alternativo" width="700" />
+Cadastro_Laravel_11
+
 
 <br>
 
 ##  Editar Produto
 <p align="center">
-<img src="../cadastro/public/imagens/EditarModal.png"  alt="Texto alternativo" width="700" />
+<img src="Cadastro_Laravel_11/public/imagens/EditarModal.png"  alt="Texto alternativo" width="700" />
 </p>
 <br>
 
 ## Visualizar Produto
 <p align="center">
-<img src="../cadastro/public/imagens/VisualizarProduto.PNG" alt="Texto alternativo" width="700" />
+<img src="Cadastro_Laravel_11/public/imagens/VisualizarProduto.PNG" alt="Texto alternativo" width="700" />
 </p>
 <br>
 
