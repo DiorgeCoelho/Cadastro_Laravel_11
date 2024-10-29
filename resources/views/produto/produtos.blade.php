@@ -152,7 +152,6 @@
                 <a href="" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="visualizar" class="btn btn-info visualizarPrdoduto"><i class="fas fa-eye"></i></a>
                 <a href="produtoDelete/{{ $produtos->id }}" type="submit" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="excluir" class="btn btn-danger excluirPrdoduto"><i class="fas fa-trash"></i></a>
 
-
                         </div>
                       </td>
                     </tr>
@@ -323,10 +322,6 @@
               </div>
             </div>
           </div>
-
-
-
-
 
         </div>
         </div>
