@@ -10,11 +10,12 @@ class ProdutoController extends Controller
 {
 public function index(){
 
-    $produtos  = Produto::all();
+    //$produtos  = Produto::all()->sortByDesc('desc');
+
+    $produtos  = Produto::orderBy('id')->get();
     return view('produto.produtos', ['produtos' => $produtos]);
 
 }
-
 
 public function cadastro(Request $request)
 {
@@ -31,7 +32,7 @@ public function cadastro(Request $request)
         if($produto->save()){
             return redirect()->route('prod')->with(['cadastro'=>'Produto Cadastrado com sucesso.']);
         }else
-        return redirect()->route('prod')->with(['cadastro'=>'Erro ao cadastrar o produto.']);
+            return redirect()->route('prod')->with(['cadastro'=>'Erro ao cadastrar o produto.']);
 }
 
 public function edit($id): JsonResponse
