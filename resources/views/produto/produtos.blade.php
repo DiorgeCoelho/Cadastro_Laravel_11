@@ -2,39 +2,6 @@
    @extends('welcome')
     @section('content')
     <script>
-
-        $('body').on('click', '.excluirPrdoduto', function() {
-                 var product_id = $(this).data('id');
-
-                //console.log(product_id);
-                 var laravel_token = $('meta[name="csrf-token"]').attr('content');
-                  // e.preventDefault();
-                   jQuery.noConflict();
-
-                   $.ajax({
-                    type: "DELETE",
-                    url: "produtoDelete/"+ product_id,
-                    dataType: 'JSON',
-                headers: {
-                 'X-CSRF-Token': laravel_token
-                         },
-                    success: function (data) {
-                            //table.draw();
-
-                            console.log(data);
-
-
-                    // $('#ModalExcluir').modal('show');
-            },
-                    error: function (data) {
-                            console.log('Error:', data);
-            }
-        });
-  });
-
-
-
-
         // codigo ajax jQuery para puxar as informações para a modal "visualizarPrdoduto"
 
                 $('body').on('click', '.visualizarPrdoduto', function(e) {
@@ -92,13 +59,47 @@
     }
 });
   });
+  // Fechar um alert automaticamente
+  $(document).ready(function(){
+    setTimeout(function() {
+	$(".alert").fadeOut("slow", function(){
+		$(this).alert('close');
+	});
+    }, 5000);
+});
 
 </script>
+
+<div class="container pt-3 ">
+  <div class=".col-6 .col-sm-4 ">
+    @if (session('cadastro'))
+    <div class="alert alert alert-success alert-dismissible fade show "  role="alert">
+      <h4 class="alert-heading">{{ session('cadastro') }}</h4>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @elseif(session('update'))
+    <div class="alert alert-warning alert-dismissible fade show "  role="alert">
+      <h4 class="alert-heading">{{ session('update') }}</h4>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @elseif(session('delete'))
+    <div class="alert alert-danger alert-dismissible fade show " role="alert">
+        <h4 class="alert-heading">{{ session('delete') }}</h4>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    @endif
+  </div>
+</div>
 
   <div class="content-wrapper">
     <section class="content">
       <div class="container-fluid">
-
         <!-- /.row -->
         <div class="row">
           <div class="col-12">
@@ -149,7 +150,7 @@
                         <div class="btn-group btn-group-sm">
                 <a href="" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="Edit" class="btn btn-secondary editarProduto"><i class="fas fa-edit"></i></a>
                 <a href="" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="visualizar" class="btn btn-info visualizarPrdoduto"><i class="fas fa-eye"></i></a>
-                <a href="" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="excluir" class="btn btn-danger excluirPrdoduto"><i class="fas fa-trash"></i></a>
+                <a href="produtoDelete/{{ $produtos->id }}" type="submit" data-id="{{ $produtos->id }}"  data-toggle="tooltip" data-original-title="excluir" class="btn btn-danger excluirPrdoduto"><i class="fas fa-trash"></i></a>
 
 
                         </div>
@@ -181,12 +182,12 @@
                                 <div class="card-body">
                                 <div class="form-group">
                                 <label for="descricaoProduto">Descrição</label>
-                                <input type="text" class="form-control" name="descricaoProduto" id="descricaoProduto" placeholder="Descrição do Produto" >
+                                <input type="text" class="form-control" name="descricaoProduto" id="descricaoProduto" placeholder="Descrição do Produto" required >
 
 
                                 <div class="form-group">
                                 <label for="valorProduto">Valor</label>
-                                <input type="number" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor do Produto" >
+                                <input type="number" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor do Produto" required>
                                 </div>
                                 </div>
 
