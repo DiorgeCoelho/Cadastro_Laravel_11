@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Produto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
-use Termwind\Components\Dd;
 
 class ProdutoController extends Controller
 {
 public function index(){
 
     $produtos  = Produto::all();
-
     return view('produto.produtos', ['produtos' => $produtos]);
 
 }
@@ -23,14 +20,8 @@ public function cadastro(Request $request)
 {
      $prod = $request->validate([
         'descricaoProduto' => ['required'],
-        'valorProduto' => ['required'],
+       'valorProduto' => ['required'],
     ]);
-
-
-
-
-        // $produto = new Produto();
-        // // $produto = Produto::create([$validascao]);
         $produto = Produto::create([
             'descricao' =>$prod['descricaoProduto'] ,
             'valor' => $prod['valorProduto'],
@@ -46,33 +37,35 @@ public function cadastro(Request $request)
 public function edit($id): JsonResponse
 {
    $prod = Produto::find($id);
-
     return response()->json($prod);
 
 }
 
 public function update(Request $request){
+
     $id = $request->input('idProduto');
     $produto = Produto::find($id);
-    $produto->descricao = $request->input('descricaoEditar');
-    $produto->valor = $request->input('valorEditar');
+    $prod = $request->validate([
+        'descricaoEditar' => ['required'],
+        'valorEditar' => ['required'],
+    ]);
+    $produto->descricao = $prod['descricaoEditar'];
+    $produto->valor = $prod['valorEditar'];
 
-    $produto->save();
-
-
-return redirect()->route('prod')->with(['update'=>'Produto Atualizado com Sucesso.']);
+    if($produto->save()){
+        return redirect()->route('prod')->with(['update'=>'Produto Atualizado com Sucesso.']);
+    }else
+         return redirect()->route('prod')->with(['update'=>'Erro ao Atualizar Produto.']);
 
 }
 public function show($id): JsonResponse
 {
     $produto = Produto::find($id);
-
     return response()->json($produto);
 }
 public function deleteProduto($id)
     {
         Produto::find($id)->delete();
-
         return redirect()->route('prod')->with(['delete'=>'Produto Excluído com Sucesso.']);
     }
 }
