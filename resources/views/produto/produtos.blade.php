@@ -105,12 +105,22 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Produtos</h3>
+
+
+                <div class="row ">
+                    <div class="col py-3 px-md-5">
+                        <a href="{{ route('conta.gera-pdf') }}" class="btn btn-warning btn-sm">Gerar PDF</a>
+                    </div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                  </div>
+
+                  <h3 class="card-title">Produtos</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 300px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Pesquisar produto pelo nome">
-
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
@@ -119,6 +129,8 @@
                   </div>
                 </div>
               </div>
+
+
               <!-- /.card-header -->
               <div class="card-body p-0 table-responsive " style="height: 750px;">
                 <table class="table table-head-fixed text-nowrap table-hover">

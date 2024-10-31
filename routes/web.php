@@ -15,6 +15,10 @@ Route::get('produtoDelete/{id}', [ProdutoController::class, 'deleteProduto']);
 Route::post('produtoC', [ProdutoController::class, 'cadastro'])->name('cadastro');
 Route::post('produtoUpdate', [ProdutoController::class, 'update'])->name('update');
 
+Route::get('/gerar-pdf', [ProdutoController::class, 'gerarPdf'])->name('gerar.pdf');
+Route::get('/visualizar', [ProdutoController::class, 'visualizar'])->name('conta.gera-pdf');
+
+Route::get('/gerar-pdf-conta', [ProdutoController::class, 'ReProdutos'])->name('conta.gerar-pdf');
 
 
 
