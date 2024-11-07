@@ -18,6 +18,7 @@
 
 <
 </head>
+
 <div class="content-wrapper">
 <section class="content">
 <div style="height: 700px; width: 100%;">
@@ -25,4 +26,4 @@
 </div>
 </section>
 </div>
-    @endsection
+@endsection

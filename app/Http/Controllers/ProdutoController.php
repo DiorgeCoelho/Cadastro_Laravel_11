@@ -4,32 +4,71 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Termwind\Components\Dd;
 
 class ProdutoController extends Controller
 {
-public function index(){
+public function index(Request $request){
 
-    //$produtos  = Produto::all()->sortByDesc('desc');
+    $produtos = Produto::when($request->has('descricao'), function ($whenQuery) use ($request) {
+        $whenQuery->where('descricao', 'like', '%' . $request->descricao . '%');
+    })
+    ->orderBy('id')
+    ->paginate(10)
+    ->withQueryString();
 
-    $produtos  = Produto::orderBy('id')->get();
-    return view('produto.produtos', ['produtos' => $produtos]);
+    if ($request->ajax()) {
+        return response()->json($produtos);
+    }
+
+    return view('produto.produtos', compact('produtos'));
 
 }
+public function ReProdutos(Request $request){
+
+    $produtos = Produto::when($request->has('descricao'), function ($whenQuery) use ($request) {
+        $whenQuery->where('descricao', 'like', '%' . $request->descricao . '%');
+    })
+    ->orderBy('id')
+    ->paginate(10)
+    ->withQueryString();
+
+    if ($request->ajax()) {
+        return response()->json($produtos);
+    }
+
+    return view('produto.filtro', compact('produtos'));
+
+        // return view('relatorios.visualizar');
+    }
+
 
 public function cadastro(Request $request)
 {
+
+    //  validação receber um array
      $prod = $request->validate([
         'descricaoProduto' => ['required'],
        'valorProduto' => ['required'],
     ]);
-        $produto = Produto::create([
-            'descricao' =>$prod['descricaoProduto'] ,
-            'valor' => $prod['valorProduto'],
 
-        ]);
+    // Se você quiser salvar utilizando um array, use o seguinte:
+     // $produto = Produto::create([
+        //     'descricao' =>$prod['descricaoProduto'] ,
+        //     'valor' => $prod['valorProduto'],
 
+        // ]);
+
+    // Se você quiser um objeto padrão do PHP, use o seguinte:
+    $object = (object) $prod;
+    $produto = Produto::create([
+        'descricao' => $object->descricaoProduto ,
+        'valor' => $object->valorProduto,
+
+    ]);
         if($produto->save()){
             return redirect()->route('prod')->with(['cadastro'=>'Produto Cadastrado com sucesso.']);
         }else
@@ -47,12 +86,16 @@ public function update(Request $request){
 
     $id = $request->input('idProduto');
     $produto = Produto::find($id);
+
     $prod = $request->validate([
         'descricaoEditar' => ['required'],
         'valorEditar' => ['required'],
     ]);
-    $produto->descricao = $prod['descricaoEditar'];
-    $produto->valor = $prod['valorEditar'];
+     // Se você quiser um objeto padrão do PHP, use o seguinte:
+     $object = (object) $prod;
+
+    $produto->descricao = $object->descricaoEditar;
+    $produto->valor = $object->valorEditar;
 
     if($produto->save()){
         return redirect()->route('prod')->with(['update'=>'Produto Atualizado com Sucesso.']);
@@ -71,12 +114,7 @@ public function deleteProduto($id)
         return redirect()->route('prod')->with(['delete'=>'Produto Excluído com Sucesso.']);
     }
 
-    //  Relatorio de todos os produtos
-public function ReProdutos(){
-        //$produto = Produto::orderBy('id')->get();
-        //return view('relatorios.Lista_Produtos', ['produtos' => $produto]);
-        return view('relatorios.visualizar');
-    }
+   //// realatorios
 
     public function visualizar(){
 
