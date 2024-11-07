@@ -274,13 +274,14 @@
 
                                 </table>
 
-                                <nav role="navigation" aria-label="Pagination Navigation"
+                                {{-- <nav role="navigation" aria-label="Pagination Navigation"
                                     class="flex items-center justify-between">
                                     <div class="flex justify-between flex-1 sm:hidden">
                                         {{ $produtos->onEachSide(1)->links('vendor.pagination.bootstrap-4') }}
                                     </div>
-
-                                </nav>
+                                </nav> --}}
+                                {{-- {{ $produtos->onEachSide(1)->links('vendor.pagination.bootstrap-4') }} --}}
+                                {{ $produtos->onEachSide(1)->links('vendor.pagination.bootstrap-5') }}
         </section>
 
         {{-- Modal novo produto --}}
